@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <!-- VIEWPORT CORRIGIDO - evita zoom automático no mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Anima Neves | Estúdio de Fandublagem</title>
     <link rel="icon" type="image/png" href="icon.webp">
@@ -36,7 +35,6 @@
             color:var(--text-light);
             line-height:1.6;
             overflow-x:hidden;
-            /* Previne zoom em inputs no iOS */
             -webkit-text-size-adjust: 100%;
         }
         
@@ -219,22 +217,23 @@
             position:relative;
         }
         
+        /* EQUALIZER PRINCIPAL - VISIBLE */
         .equalizer-header{
             display:flex;
             justify-content:center;
-            gap:3px;
-            height:30px;
+            gap:4px;
+            height:40px;
             align-items:flex-end;
-            margin:20px 0;
-            opacity:.6;
+            margin:25px 0;
+            opacity:.8;
         }
         
         .eq-bar-big{
-            width:5px;
+            width:6px;
             background:linear-gradient(to top, var(--primary-blue), var(--creative-purple), var(--studio-pink));
             border-radius:3px;
             animation:equalizeBig 1.2s ease-in-out infinite;
-            box-shadow:0 0 15px rgba(91,124,255,.5);
+            box-shadow:0 0 20px rgba(91,124,255,.5);
         }
         
         .eq-bar-big:nth-child(1){height:30%;animation-delay:0s;}
@@ -884,11 +883,16 @@
                 border-radius:12px;
             }
             
+            /* EQUALIZER NO MOBILE - VISÍVEL E PROPORCIONAL */
             .equalizer-header{
-                height:25px;
-                margin:15px 0;
+                height:30px;
+                margin:20px 0;
+                gap:3px;
             }
-            .eq-bar-big{width:4px;}
+            .eq-bar-big{
+                width:4px;
+                border-radius:2px;
+            }
             
             .social-strip{
                 gap:12px;
@@ -1007,7 +1011,7 @@
     <img src="icon.webp" alt="Logo Anima Neves" class="logo-image" style="margin-bottom:15px;">
     <h1 style="margin-bottom:8px;">Anima Neves</h1>
     
-    <!-- EQUALIZER PRINCIPAL -->
+    <!-- EQUALIZER PRINCIPAL - SEMPRE VISÍVEL -->
     <div class="equalizer-header">
       <span class="eq-bar-big"></span>
       <span class="eq-bar-big"></span>
