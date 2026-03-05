@@ -254,38 +254,41 @@
             50%{box-shadow:0 10px 60px rgba(255,45,85,.4), 0 0 80px rgba(155,91,255,.2);}
         }
 
-        .discord-btn{
-            display:inline-flex;
-            align-items:center;
-            gap:10px;
-            background:linear-gradient(135deg, #5865F2 0%, #4752C4 100%);
-            color:#fff;
-            padding:15px 30px;
-            border-radius:10px;
-            text-decoration:none;
-            font-weight:600;
-            font-size:1em;
-            transition:all .3s;
-            box-shadow:0 8px 30px rgba(88,101,242,.4);
-            position:relative;
-            overflow:hidden;
-        }
+.discord-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    background:linear-gradient(135deg, #5865F2 0%, #4752C4 100%);
+    color:#fff;
+    padding:15px 30px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:1em;
+    transition:all .3s;
+    box-shadow:0 8px 30px rgba(88,101,242,.4);
+    position:relative;
+    overflow:hidden;
+}
 
-        .discord-btn::before{
-            content:'🎧';
-            font-size:1.2em;
-            animation:headphoneBounce 2s ease-in-out infinite;
-        }
+/* Remove o emoji headset */
+.discord-btn::before{
+    display: none;
+}
 
-        @keyframes headphoneBounce{
-            0%,100%{transform:translateY(0);}
-            50%{transform:translateY(-3px);}
-        }
+.discord-btn:hover{
+    transform:translateY(-3px) scale(1.02);
+    box-shadow:0 12px 40px rgba(88,101,242,.6);
+}
 
-        .discord-btn:hover{
-            transform:translateY(-3px) scale(1.02);
-            box-shadow:0 12px 40px rgba(88,101,242,.6);
-        }
+/* Animação sutil na logo */
+.discord-btn img{
+    transition: transform 0.3s ease;
+}
+
+.discord-btn:hover img{
+    transform: scale(1.1) rotate(-5deg);
+}
 
         .social-strip{
             display:flex;
@@ -1341,5 +1344,6 @@
 
 </body>
 </html>
+
 
 
