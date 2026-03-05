@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="icon.webp">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
-        
+
         *{margin:0;padding:0;box-sizing:border-box}
         :root{
             --primary-blue:#5B7CFF;
@@ -26,9 +26,9 @@
             --nok:#ff4757;
             --recording:#ff2d55
         }
-        
+
         html{scroll-behavior:smooth}
-        
+
         body{
             font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
             background:var(--bg-dark);
@@ -37,8 +37,7 @@
             overflow-x:hidden;
             -webkit-text-size-adjust: 100%;
         }
-        
-        /* ANIMAÇÃO DE FUNDO - ONDAS SONORAS */
+
         body::before{
             content:'';
             position:fixed;
@@ -50,8 +49,7 @@
             pointer-events:none;
             z-index:-1;
         }
-        
-        /* NAVEGAÇÃO COM EQUALIZER */
+
         nav{
             position:sticky;
             top:0;
@@ -62,7 +60,7 @@
             z-index:1000;
             box-shadow:0 4px 30px rgba(0,0,0,.5);
         }
-        
+
         nav ul{
             list-style:none;
             display:flex;
@@ -71,7 +69,7 @@
             gap:40px;
             padding:20px 0;
         }
-        
+
         nav a{
             text-decoration:none;
             color:var(--text-muted);
@@ -86,7 +84,7 @@
             align-items:center;
             gap:10px;
         }
-        
+
         nav a::after{
             content:'';
             position:absolute;
@@ -96,16 +94,10 @@
             transition:.3s;
             box-shadow:0 0 10px var(--primary-blue);
         }
-        
-        nav a:hover{
-            color:var(--primary-light);
-        }
-        
-        nav a:hover::after{
-            width:100%;
-        }
-        
-        /* EQUALIZER NAS NAV LINKS */
+
+        nav a:hover{color:var(--primary-light);}
+        nav a:hover::after{width:100%;}
+
         .equalizer-mini{
             display:flex;
             gap:2px;
@@ -114,29 +106,26 @@
             opacity:0;
             transition:.3s;
         }
-        
-        nav a:hover .equalizer-mini{
-            opacity:1;
-        }
-        
+
+        nav a:hover .equalizer-mini{opacity:1;}
+
         .eq-bar{
             width:3px;
             background:linear-gradient(to top, var(--primary-blue), var(--creative-purple));
             animation:equalize 0.8s ease-in-out infinite;
             border-radius:1px;
         }
-        
+
         .eq-bar:nth-child(1){height:40%;animation-delay:0s;}
         .eq-bar:nth-child(2){height:70%;animation-delay:0.1s;}
         .eq-bar:nth-child(3){height:50%;animation-delay:0.2s;}
         .eq-bar:nth-child(4){height:80%;animation-delay:0.3s;}
-        
+
         @keyframes equalize{
             0%,100%{transform:scaleY(1);}
             50%{transform:scaleY(1.5);}
         }
-        
-        /* SEÇÕES */
+
         section{
             padding:80px 20px;
             max-width:1000px;
@@ -147,8 +136,7 @@
             justify-content:center;
             position:relative;
         }
-        
-        /* TÍTULOS COM EFEITO DE ÁUDIO */
+
         h1{
             font-family:'Space Grotesk', sans-serif;
             font-size:3em;
@@ -160,7 +148,7 @@
             display:inline-block;
             letter-spacing:-1px;
         }
-        
+
         h1::after{
             content:'';
             position:absolute;
@@ -170,12 +158,12 @@
             border-radius:2px;
             animation:audioWave 3s ease-in-out infinite;
         }
-        
+
         @keyframes audioWave{
             0%,100%{transform:scaleX(1);opacity:.8;}
             50%{transform:scaleX(1.05);opacity:1;}
         }
-        
+
         h2{
             font-family:'Space Grotesk', sans-serif;
             font-size:2.2em;
@@ -184,7 +172,7 @@
             padding-bottom:15px;
             color:var(--text-light);
         }
-        
+
         h2::after{
             content:'';
             position:absolute;
@@ -194,30 +182,28 @@
             border-radius:2px;
             box-shadow:0 0 15px var(--primary-blue);
         }
-        
+
         h3{
             font-family:'Space Grotesk', sans-serif;
             color:var(--primary-light);
         }
-        
+
         p{margin-bottom:15px;font-size:15px;color:var(--text-muted);line-height:1.6}
-        
+
         .subtitle{
             font-size:1.1em;
             color:var(--text-light);
             margin-bottom:30px;
             opacity:.9;
         }
-        
-        /* HEADER COM EQUALIZER PRINCIPAL */
+
         .title-box{
             text-align:center;
             max-width:700px;
             margin:0 auto;
             position:relative;
         }
-        
-        /* EQUALIZER PRINCIPAL - VISIBLE */
+
         .equalizer-header{
             display:flex;
             justify-content:center;
@@ -227,7 +213,7 @@
             margin:25px 0;
             opacity:.8;
         }
-        
+
         .eq-bar-big{
             width:6px;
             background:linear-gradient(to top, var(--primary-blue), var(--creative-purple), var(--studio-pink));
@@ -235,7 +221,7 @@
             animation:equalizeBig 1.2s ease-in-out infinite;
             box-shadow:0 0 20px rgba(91,124,255,.5);
         }
-        
+
         .eq-bar-big:nth-child(1){height:30%;animation-delay:0s;}
         .eq-bar-big:nth-child(2){height:60%;animation-delay:0.1s;}
         .eq-bar-big:nth-child(3){height:40%;animation-delay:0.2s;}
@@ -244,13 +230,12 @@
         .eq-bar-big:nth-child(6){height:90%;animation-delay:0.5s;}
         .eq-bar-big:nth-child(7){height:35%;animation-delay:0.6s;}
         .eq-bar-big:nth-child(8){height:70%;animation-delay:0.7s;}
-        
+
         @keyframes equalizeBig{
             0%,100%{transform:scaleY(1);}
             50%{transform:scaleY(1.3);}
         }
-        
-        /* LOGO COM PULSO DE GRAVAÇÃO */
+
         .logo-image{
             width:120px;
             height:120px;
@@ -263,13 +248,12 @@
             box-shadow:0 10px 40px rgba(91,124,255,.3);
             animation:recordingPulse 4s ease-in-out infinite;
         }
-        
+
         @keyframes recordingPulse{
             0%,100%{box-shadow:0 10px 40px rgba(91,124,255,.3);}
             50%{box-shadow:0 10px 60px rgba(255,45,85,.4), 0 0 80px rgba(155,91,255,.2);}
         }
-        
-        /* BOTÃO DISCORD ESTILIZADO */
+
         .discord-btn{
             display:inline-flex;
             align-items:center;
@@ -286,24 +270,23 @@
             position:relative;
             overflow:hidden;
         }
-        
+
         .discord-btn::before{
             content:'🎧';
             font-size:1.2em;
             animation:headphoneBounce 2s ease-in-out infinite;
         }
-        
+
         @keyframes headphoneBounce{
             0%,100%{transform:translateY(0);}
             50%{transform:translateY(-3px);}
         }
-        
+
         .discord-btn:hover{
             transform:translateY(-3px) scale(1.02);
             box-shadow:0 12px 40px rgba(88,101,242,.6);
         }
-        
-        /* ÍCONES SOCIAIS - CORRIGIDO PARA MOBILE */
+
         .social-strip{
             display:flex;
             justify-content:center;
@@ -312,7 +295,7 @@
             flex-wrap:wrap;
             max-width:100%;
         }
-        
+
         .social-strip a{
             position:relative;
             width:50px;
@@ -327,7 +310,7 @@
             overflow:hidden;
             flex-shrink:0;
         }
-        
+
         .social-strip a::before{
             content:'';
             position:absolute;
@@ -336,11 +319,9 @@
             transition:.3s;
             z-index:0;
         }
-        
-        .social-strip a:hover::before{
-            height:100%;
-        }
-        
+
+        .social-strip a:hover::before{height:100%;}
+
         .social-strip img{
             width:24px;
             height:24px;
@@ -350,19 +331,18 @@
             filter:grayscale(100%) brightness(1.5);
             transition:.3s;
         }
-        
+
         .social-strip a:hover img{
             filter:grayscale(0%) brightness(1.2);
             transform:scale(1.1);
         }
-        
+
         .social-strip a:hover{
             transform:translateY(-3px);
             border-color:var(--primary-blue);
             box-shadow:0 8px 25px var(--accent-glow);
         }
-        
-        /* LISTA DE SUMÁRIO COM EFEITOS */
+
         .summary-list{
             list-style:none;
             display:grid;
@@ -370,7 +350,7 @@
             gap:15px;
             margin-top:30px;
         }
-        
+
         .summary-item{
             background:var(--bg-card);
             padding:25px;
@@ -383,7 +363,7 @@
             position:relative;
             overflow:hidden;
         }
-        
+
         .summary-item::before{
             content:'';
             position:absolute;
@@ -392,18 +372,16 @@
             transform:scaleX(0);
             transition:.3s;
         }
-        
+
         .summary-item:hover{
             background:var(--hover-bg);
             transform:translateY(-3px);
             border-color:var(--primary-blue);
             box-shadow:0 10px 30px var(--accent-glow);
         }
-        
-        .summary-item:hover::before{
-            transform:scaleX(1);
-        }
-        
+
+        .summary-item:hover::before{transform:scaleX(1);}
+
         .item-number{
             display:inline-block;
             background:linear-gradient(135deg, var(--primary-blue), var(--creative-purple));
@@ -419,7 +397,7 @@
             box-shadow:0 4px 12px rgba(91,124,255,.4);
             font-size:0.9em;
         }
-        
+
         .item-title{
             font-size:1.1em;
             font-weight:600;
@@ -428,21 +406,20 @@
             display:flex;
             align-items:center;
         }
-        
+
         .item-description{
             font-size:.9em;
             color:var(--text-muted);
             padding-left:42px;
         }
-        
-        /* CARDS COM VISUAL DE CABINE */
+
         .cards{
             display:grid;
             grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
             gap:20px;
             margin-top:30px;
         }
-        
+
         .card{
             background:var(--bg-card);
             padding:25px;
@@ -452,7 +429,7 @@
             position:relative;
             overflow:hidden;
         }
-        
+
         .card::after{
             content:'🎙️';
             position:absolute;
@@ -461,18 +438,18 @@
             opacity:.1;
             transition:.3s;
         }
-        
+
         .card:hover{
             border-color:var(--creative-purple);
             box-shadow:0 15px 40px var(--purple-glow);
             transform:translateY(-3px);
         }
-        
+
         .card:hover::after{
             opacity:.3;
             transform:rotate(15deg) scale(1.2);
         }
-        
+
         .card h3{
             color:var(--primary-light);
             margin-bottom:15px;
@@ -481,31 +458,31 @@
             align-items:center;
             gap:8px;
         }
-        
+
         .card ul{
             margin:0;
             padding-left:1.2em;
             color:var(--text-muted);
             font-size:0.95em;
         }
-        
+
         .card ul li{
             margin-bottom:10px;
             position:relative;
         }
-        
-        .card ul li::marker{
-            color:var(--creative-purple);
-        }
-        
-        /* GRID DE CONTEÚDO COM ÍCONES ANIMADOS */
+
+        .card ul li::marker{color:var(--creative-purple);}
+
         .content-grid{
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+            grid-template-columns:repeat(3, 1fr);
             gap:15px;
             margin-top:30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
+
         .content-card{
             background:var(--bg-card);
             border:1px solid var(--border-color);
@@ -516,7 +493,7 @@
             position:relative;
             overflow:hidden;
         }
-        
+
         .content-card::before{
             content:'';
             position:absolute;
@@ -525,17 +502,15 @@
             opacity:0;
             transition:.4s;
         }
-        
+
         .content-card:hover{
             transform:translateY(-5px) scale(1.02);
             border-color:var(--primary-blue);
             box-shadow:0 15px 40px var(--accent-glow);
         }
-        
-        .content-card:hover::before{
-            opacity:1;
-        }
-        
+
+        .content-card:hover::before{opacity:1;}
+
         .content-icon{
             font-size:2.5em;
             margin-bottom:12px;
@@ -543,12 +518,12 @@
             transition:.4s;
             filter:drop-shadow(0 5px 15px rgba(0,0,0,.3));
         }
-        
+
         .content-card:hover .content-icon{
             transform:scale(1.15) rotate(-5deg);
             filter:drop-shadow(0 8px 20px rgba(91,124,255,.4));
         }
-        
+
         .content-title{
             font-size:1.1em;
             font-weight:600;
@@ -556,7 +531,7 @@
             color:var(--text-light);
             font-family:'Space Grotesk', sans-serif;
         }
-        
+
         .content-status{
             font-size:.8em;
             font-weight:700;
@@ -566,27 +541,26 @@
             position:relative;
             z-index:1;
         }
-        
+
         .status-ok{
             background:linear-gradient(135deg, var(--ok) 0%, #00b894 100%);
             color:#fff;
             box-shadow:0 4px 12px rgba(0,208,132,.4);
         }
-        
+
         .status-nok{
             background:linear-gradient(135deg, var(--nok) 0%, #ff3838 100%);
             color:#fff;
             box-shadow:0 4px 12px rgba(255,71,87,.4);
         }
-        
-        /* CRONOGRAMA COM VISUAL DE TIMELINE */
+
         .post-grid{
             display:grid;
             grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
             gap:20px;
             margin-top:30px;
         }
-        
+
         .post-card{
             background:var(--bg-card);
             border:1px solid var(--border-color);
@@ -596,7 +570,7 @@
             position:relative;
             overflow:hidden;
         }
-        
+
         .post-card::before{
             content:'';
             position:absolute;
@@ -605,17 +579,15 @@
             transform:scaleY(0);
             transition:.3s;
         }
-        
+
         .post-card:hover{
             border-color:var(--primary-blue);
             box-shadow:0 15px 40px var(--accent-glow);
             transform:translateX(3px);
         }
-        
-        .post-card:hover::before{
-            transform:scaleY(1);
-        }
-        
+
+        .post-card:hover::before{transform:scaleY(1);}
+
         .post-card h3{
             color:var(--primary-blue);
             font-size:1.2em;
@@ -624,7 +596,7 @@
             align-items:center;
             gap:8px;
         }
-        
+
         .post-card .qty{
             font-size:2.5em;
             font-weight:700;
@@ -632,20 +604,20 @@
             font-family:'Space Grotesk', sans-serif;
             text-shadow:0 0 20px rgba(91,124,255,.5);
         }
-        
+
         .post-card .freq{
             margin:10px 0;
             color:var(--text-muted);
             font-size:1em;
         }
-        
+
         .day-tags{
             display:flex;
             flex-wrap:wrap;
             gap:8px;
             margin-top:15px;
         }
-        
+
         .day-tag{
             background:linear-gradient(135deg, var(--primary-blue) 0%, var(--creative-purple) 100%);
             color:#fff;
@@ -658,13 +630,12 @@
             box-shadow:0 4px 12px rgba(91,124,255,.3);
             transition:.3s;
         }
-        
+
         .day-tag:hover{
             transform:translateY(-2px);
             box-shadow:0 6px 15px rgba(91,124,255,.5);
         }
-        
-        /* CAIXAS DE OBSERVAÇÃO */
+
         .obs-box, .obs-top{
             margin-top:40px;
             padding:20px 25px;
@@ -673,7 +644,7 @@
             border-radius:0 10px 10px 0;
             position:relative;
         }
-        
+
         .obs-box::before, .obs-top::before{
             content:'💡';
             position:absolute;
@@ -681,27 +652,26 @@
             font-size:1.3em;
             opacity:.3;
         }
-        
+
         .obs-box p, .obs-top p{
             margin:0;
             font-size:0.95em;
             color:var(--text-light);
         }
-        
+
         .obs-top{
             max-width:600px;
             margin:30px auto 0;
             text-align:left;
         }
-        
-        /* ACCORDION ESTILIZADO */
+
         .accordion{
             display:flex;
             flex-direction:column;
             gap:12px;
             margin-top:30px;
         }
-        
+
         .accordion-item{
             background:var(--bg-card);
             border:1px solid var(--border-color);
@@ -709,11 +679,9 @@
             overflow:hidden;
             transition:.3s;
         }
-        
-        .accordion-item:hover{
-            border-color:var(--creative-purple);
-        }
-        
+
+        .accordion-item:hover{border-color:var(--creative-purple);}
+
         .accordion-title{
             padding:18px 20px;
             font-size:1.05em;
@@ -728,7 +696,7 @@
             transition:.3s;
             font-family:'Space Grotesk', sans-serif;
         }
-        
+
         .accordion-title::after{
             content:'▾';
             font-size:1.2em;
@@ -736,36 +704,35 @@
             transition:.3s;
             text-shadow:0 0 10px var(--creative-purple);
         }
-        
+
         .accordion-item[open] .accordion-title::after{
             transform:rotate(180deg);
             color:var(--primary-blue);
         }
-        
+
         .accordion-item[open] .accordion-title{
             background:linear-gradient(90deg, rgba(91,124,255,.1) 0%, rgba(155,91,255,.05) 100%);
         }
-        
+
         .accordion-content{
             padding:0 20px 20px;
             font-size:.9em;
             color:var(--text-muted);
             line-height:1.7;
         }
-        
+
         .accordion-content a{
             color:var(--primary-light);
             text-decoration:none;
             border-bottom:1px dashed var(--primary-blue);
             transition:.3s;
         }
-        
+
         .accordion-content a:hover{
             color:var(--creative-purple);
             border-bottom-style:solid;
         }
-        
-        /* INSTRUÇÕES COM IMAGENS */
+
         .instrucao-block{
             background:var(--bg-card);
             border:1px solid var(--border-color);
@@ -774,12 +741,12 @@
             margin-bottom:25px;
             transition:.3s;
         }
-        
+
         .instrucao-block:hover{
             border-color:var(--primary-blue);
             box-shadow:0 8px 30px var(--accent-glow);
         }
-        
+
         .instrucao-block h3{
             color:var(--primary-blue);
             margin-bottom:15px;
@@ -788,31 +755,29 @@
             align-items:center;
             gap:10px;
         }
-        
+
         .instrucao-block h3::before{
             content:'▸';
             color:var(--creative-purple);
             font-size:1.3em;
         }
-        
+
         .exemplo-imagens{
             display:grid;
             grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
             gap:15px;
             margin:20px 0;
         }
-        
+
         .exemplo-imagens figure{
             text-align:center;
             font-size:.85em;
             color:var(--text-muted);
             transition:.3s;
         }
-        
-        .exemplo-imagens figure:hover{
-            transform:translateY(-3px);
-        }
-        
+
+        .exemplo-imagens figure:hover{transform:translateY(-3px);}
+
         .exemplo-imagens img{
             width:100%;
             border-radius:8px;
@@ -820,18 +785,17 @@
             transition:.3s;
             box-shadow:0 8px 20px rgba(0,0,0,.3);
         }
-        
+
         .exemplo-imagens figure:hover img{
             border-color:var(--primary-blue);
             box-shadow:0 10px 30px var(--accent-glow);
         }
-        
+
         .exemplo-imagens figcaption{
             margin-top:10px;
             font-weight:500;
         }
-        
-        /* TEXTAREA PRONTA */
+
         .mensagem-pronta textarea{
             width:100%;
             padding:15px;
@@ -845,15 +809,14 @@
             cursor:pointer;
             transition:.3s;
         }
-        
+
         .mensagem-pronta textarea:hover,
         .mensagem-pronta textarea:focus{
             border-color:var(--primary-blue);
             box-shadow:0 0 15px var(--accent-glow);
             outline:none;
         }
-        
-        /* INFO FINAL */
+
         .info-final{
             margin-top:25px;
             padding:20px;
@@ -861,7 +824,7 @@
             border:1px solid rgba(0,208,132,.3);
             border-radius:10px;
         }
-        
+
         .info-final p{
             margin-bottom:8px;
             display:flex;
@@ -869,113 +832,50 @@
             gap:8px;
             font-size:0.9em;
         }
-        
-        /* RESPONSIVO - MOBILE FIRST */
+
         @media (max-width: 768px){
             section{padding:60px 15px;}
-            
             h1{font-size:2.2em;letter-spacing:0;}
             h2{font-size:1.6em;}
-            
-            .logo-image{
-                width:90px;
-                height:90px;
-                border-radius:12px;
-            }
-            
-            /* EQUALIZER NO MOBILE - VISÍVEL E PROPORCIONAL */
-            .equalizer-header{
-                height:30px;
-                margin:20px 0;
-                gap:3px;
-            }
-            .eq-bar-big{
-                width:4px;
-                border-radius:2px;
-            }
-            
-            .social-strip{
-                gap:12px;
-                margin:25px 0;
-            }
-            .social-strip a{
-                width:45px;
-                height:45px;
-                border-radius:8px;
-            }
-            .social-strip img{
-                width:22px;
-                height:22px;
-            }
-            
-            .discord-btn{
-                padding:12px 25px;
-                font-size:0.95em;
-            }
-            
-            .summary-list{
-                grid-template-columns:1fr;
-                gap:12px;
-            }
+            .logo-image{width:90px;height:90px;border-radius:12px;}
+            .equalizer-header{height:30px;margin:20px 0;gap:3px;}
+            .eq-bar-big{width:4px;border-radius:2px;}
+            .social-strip{gap:12px;margin:25px 0;}
+            .social-strip a{width:45px;height:45px;border-radius:8px;}
+            .social-strip img{width:22px;height:22px;}
+            .discord-btn{padding:12px 25px;font-size:0.95em;}
+            .summary-list{grid-template-columns:1fr;gap:12px;}
             .summary-item{padding:20px;}
-            
-            .content-grid{
-                grid-template-columns:repeat(2, 1fr);
-                gap:12px;
-            }
+            .content-grid{grid-template-columns:repeat(2, 1fr);gap:12px;}
             .content-card{padding:20px 10px;}
             .content-icon{font-size:2em;}
             .content-title{font-size:1em;}
-            
             .post-grid{grid-template-columns:1fr;}
-            
             .cards{grid-template-columns:1fr;}
-            
             .accordion-title{padding:15px 18px;font-size:1em;}
             .accordion-content{padding:0 18px 18px;}
-            
             .instrucao-block{padding:20px;}
-            .exemplo-imagens{
-                grid-template-columns:1fr;
-                gap:12px;
-            }
-            
-            nav ul{
-                gap:20px;
-                padding:15px 0;
-            }
-            nav a{
-                font-size:11px;
-                letter-spacing:1px;
-            }
+            .exemplo-imagens{grid-template-columns:1fr;gap:12px;}
+            nav ul{gap:20px;padding:15px 0;}
+            nav a{font-size:11px;letter-spacing:1px;}
             .equalizer-mini{display:none;}
         }
-        
-        /* ANIMAÇÃO DE ENTRADA */
+
         @keyframes fadeInUp{
-            from{
-                opacity:0;
-                transform:translateY(30px);
-            }
-            to{
-                opacity:1;
-                transform:translateY(0);
-            }
+            from{opacity:0;transform:translateY(30px);}
+            to{opacity:1;transform:translateY(0);}
         }
-        
-        section > *{
-            animation:fadeInUp .6s ease-out forwards;
-        }
-        
+
+        section > *{animation:fadeInUp .6s ease-out forwards;}
         section > *:nth-child(1){animation-delay:.1s;}
         section > *:nth-child(2){animation-delay:.2s;}
         section > *:nth-child(3){animation-delay:.3s;}
         section > *:nth-child(4){animation-delay:.4s;}
     </style>
+<base target="_blank">
 </head>
 <body>
 
-  <!-- NAVEGAÇÃO -->
 <nav>
   <ul>
     <li>
@@ -1003,15 +903,11 @@
   </ul>
 </nav>
 
-  <!-- INÍCIO -->
 <section id="topo">
   <div class="title-box">
-
-    <!-- Logo + Nome -->
     <img src="icon.webp" alt="Logo Anima Neves" class="logo-image" style="margin-bottom:15px;">
     <h1 style="margin-bottom:8px;">Anima Neves</h1>
-    
-    <!-- EQUALIZER PRINCIPAL - SEMPRE VISÍVEL -->
+
     <div class="equalizer-header">
       <span class="eq-bar-big"></span>
       <span class="eq-bar-big"></span>
@@ -1022,10 +918,9 @@
       <span class="eq-bar-big"></span>
       <span class="eq-bar-big"></span>
     </div>
-    
+
     <p style="font-size:1.2em;color:var(--text-muted);margin-bottom:30px;">🎙️ Um projeto de fandublagem</p>
 
-    <!-- Redes Sociais - 8 ícones em 2 linhas no mobile -->
     <div class="social-strip">
       <a href="https://www.youtube.com/@animaneves2323" target="_blank" title="YouTube"><img src="youtube.png" alt="YouTube"></a>
       <a href="https://www.instagram.com/animaneves2323" target="_blank" title="Instagram"><img src="instagram.png" alt="Instagram"></a>
@@ -1037,21 +932,18 @@
       <a href="https://www.dailymotion.com/animaneves23" target="_blank" title="DailyMotion"><img src="dailymotion.png" alt="DailyMotion"></a>
     </div>
 
-    <!-- Link Discord -->
-    <a class="discord-btn" href="https://discord.gg/CQCVcbVAyw" target="_blank" rel="noopener">
-      <span>Servidor de Recrutamento</span>
-    </a>
-
-    <!-- Observação -->
-    <div class="obs-top">
-      <p><strong>Observação:</strong> Se o link do servidor não estiver disponível, as vagas estão fechadas. Avisaremos nas redes quando abrirem novamente.</p>
-    </div>
+<div class="obs-box" style="margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; text-align: left;">
+  <p style="margin-bottom: 10px; text-align: left;"><strong>Observação:</strong></p>
+  <ul style="padding-left: 20px; color: var(--text-muted); margin: 0; text-align: left; list-style-position: outside;">
+    <li style="margin-bottom: 8px; text-align: left;">Se o link do servidor não estiver disponível, as vagas estão fechadas.</li>
+    <li style="text-align: left;">Avisaremos nas redes quando abrirem novamente.</li>
+  </ul>
+</div>
 
   </div>
 </section>
 
-  <!-- PARTICIPE DO PROJETO -->
-  <section id="participe">
+<section id="participe">
     <h2>Participe do Projeto</h2>
     <p class="subtitle">Clique em um dos tópicos abaixo para saber mais:</p>
 
@@ -1081,146 +973,141 @@
         <p class="item-description">Passo final para entrar no projeto.</p>
       </a>
     </ul>
-  </section>
+</section>
 
-    <!-- REQUISITOS -->
-    <section id="requisitos">
-        <h2>Requisitos</h2>
-        <p>Para participar do projeto, é importante tentar atender aos seguintes critérios:</p>
-        <div class="cards">
-            <div class="card">
-                <h3>✨ Opcional</h3>
-                <ul>
-                    <li>Experiência anterior com dublagem ou fandublagem.</li>
-                    <li>Equipamento tecnológico de nível profissional.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>📋 Obrigatórios</h3>
-                <ul>
-                    <li><strong>Presença:</strong> A participação no servidor do projeto (via Discord) é obrigatória. Não é necessário interagir, mas é fundamental estar presente para acompanhar avisos e atualizações importantes. Quem não estiver disposto a ingressar no servidor, infelizmente, não poderá participar do projeto.</li>
-                    <li><strong>Disponibilidade e Horário:</strong> Não há exigência de horário fixo nem necessidade de presença diária no servidor do projeto, mas é necessário que a pessoa tenha disponibilidade para responder às mensagens da Administração (Capitão, Comandante e Ajudante) dentro de um prazo razoável de alguns dias a, no máximo, algumas semanas. Respostas que levem mais de um mês não serão aceitas, a não ser que tenham sido por algum motivo totalmente compreensivo, por causa de alguma emergência ou algo do tipo.</li>
-                    <li><strong>Faixa Etária:</strong> A participação no projeto é permitida apenas para pessoas com 12 anos ou mais, a fim de assegurar uma comunicação adequada e o nível de maturidade exigido.</li>
-                    <li><strong>Meio de Comunicação:</strong> É obrigatório que a pessoa tenha um meio de comunicação para que a Administração possa mandar mensagem para a mesma quando necessário.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- CRONOGRAMA -->
-    <section id="cronograma">
-        <h2>Cronograma</h2>
-        <p>Calendário de publicações do projeto:</p>
-
-        <div class="post-grid">
-            <div class="post-card">
-                <h3>🎬 Vídeos</h3>
-                <div class="qty">10</div>
-                <p class="freq">1 vídeo por semana</p>
-                <div class="day-tags">
-                    <span class="day-tag">Domingo</span>
-                </div>
-                <p style="margin-top:15px;font-size:.9em;color:var(--text-muted);">
-                    Enquanto os vídeos são postados, novos serão produzidos.
-                </p>
-            </div>
-
-            <div class="post-card">
-                <h3>⚡ Shorts</h3>
-                <div class="qty">10</div>
-                <p class="freq">3 shorts por semana</p>
-                <div class="day-tags">
-                    <span class="day-tag">Segunda</span>
-                    <span class="day-tag">Quarta</span>
-                    <span class="day-tag">Sexta</span>
-                </div>
-                <p style="margin-top:15px;font-size:.9em;color:var(--text-muted);">
-                    Enquanto os shorts são postados, novos serão produzidos.
-                </p>
-            </div>
-        </div>
-
-        <div class="obs-box">
-            <p><strong>Observação:</strong> Todas as obras serão dubladas integralmente, do primeiro ao último episódio ou capítulo.</p>
-        </div>
-    </section>
-
-    <!-- CONTEÚDO -->
-    <section id="conteudo">
-        <h2>Conteúdo</h2>
-        <p>O que será fandublado no projeto:</p>
-        
-        <!-- NOVO: Requisitos para obras -->
-        <div class="obs-box" style="margin-bottom: 30px; background: linear-gradient(90deg, rgba(91,124,255,.05) 0%, transparent 100%);">
-            <p style="margin-bottom: 15px;"><strong>Observação:</strong></p>
-            <ul style="padding-left: 20px; color: var(--text-muted);">
-                <li style="margin-bottom: 10px;">A obra <strong>não pode ter uma adaptação em animação</strong> que foi dublada oficialmente em português.</li>
-                <li>A obra <strong>não pode ter conteúdo 18+</strong> (gore, sexual, ecchi, fanservice ou outra coisa).</li>
+<section id="requisitos">
+    <h2>Requisitos</h2>
+    <p>Para participar do projeto, é importante tentar atender aos seguintes critérios:</p>
+    <div class="cards">
+        <div class="card">
+            <h3>✨ Opcional</h3>
+            <ul>
+                <li>Experiência anterior com dublagem ou fandublagem.</li>
+                <li>Equipamento tecnológico de nível profissional.</li>
             </ul>
         </div>
-
-        <div class="content-grid">
-            <div class="content-card">
-                <span class="content-icon">🎬</span>
-                <div class="content-title">Animações</div>
-                <span class="content-status status-ok">INCLUÍDO</span>
-            </div>
-
-            <div class="content-card">
-                <span class="content-icon">📚</span>
-                <div class="content-title">HQ's</div>
-                <span class="content-status status-ok">INCLUÍDO</span>
-            </div>
-
-            <div class="content-card">
-                <span class="content-icon">💬</span>
-                <div class="content-title">Comics</div>
-                <span class="content-status status-ok">INCLUÍDO</span>
-            </div>
-
-            <div class="content-card">
-                <span class="content-icon">🍱</span>
-                <div class="content-title">Mangás</div>
-                <span class="content-status status-ok">INCLUÍDO</span>
-            </div>
-
-            <div class="content-card">
-                <span class="content-icon">📖</span>
-                <div class="content-title">Manhwas</div>
-                <span class="content-status status-ok">INCLUÍDO</span>
-            </div>
-
-            <div class="content-card">
-                <span class="content-icon">🎮</span>
-                <div class="content-title">Jogos</div>
-                <span class="content-status status-ok">INCLUÍDO</span>
-            </div>
-
-            <div class="content-card">
-                <span class="content-icon">🔞</span>
-                <div class="content-title">Conteúdo 18+</div>
-                <span class="content-status status-nok">NÃO INCLUÍDO</span>
-            </div>
+        <div class="card">
+            <h3>📋 Obrigatórios</h3>
+            <ul>
+                <li><strong>Presença:</strong> A participação no servidor do projeto (via Discord) é obrigatória. Não é necessário interagir, mas é fundamental estar presente para acompanhar avisos e atualizações importantes. Quem não estiver disposto a ingressar no servidor, infelizmente, não poderá participar do projeto.</li>
+                <li><strong>Disponibilidade e Horário:</strong> Não há exigência de horário fixo nem necessidade de presença diária no servidor do projeto, mas é necessário que a pessoa tenha disponibilidade para responder às mensagens da Administração (Capitão, Comandante e Ajudante) dentro de um prazo razoável de alguns dias a, no máximo, algumas semanas. Respostas que levem mais de um mês não serão aceitas, a não ser que tenham sido por algum motivo totalmente compreensivo, por causa de alguma emergência ou algo do tipo.</li>
+                <li><strong>Faixa Etária:</strong> A participação no projeto é permitida apenas para pessoas com 12 anos ou mais, a fim de assegurar uma comunicação adequada e o nível de maturidade exigido.</li>
+                <li><strong>Meio de Comunicação:</strong> É obrigatório que a pessoa tenha um meio de comunicação para que a Administração possa mandar mensagem para a mesma quando necessário.</li>
+            </ul>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- RECOMPENSA -->
-    <section id="recompensa">
-        <h2>Recompensa</h2>
-        <p>Os participantes receberão:</p>
-        <div class="cards">
-            <div class="card">
-                <h3>🌟 Divulgação</h3>
-                <p>Como o projeto não possui fins lucrativos, a forma de reconhecimento será a divulgação na descrição do vídeo de algo do membro que participou do vídeo do canal, como links dos projetos pessoais ou redes sociais, junto com seu nome artístico.</p>
+<section id="cronograma">
+    <h2>Cronograma</h2>
+    <p>Calendário de publicações do projeto:</p>
+
+    <div class="post-grid">
+        <div class="post-card">
+            <h3>🎬 Vídeos</h3>
+            <div class="qty">10</div>
+            <p class="freq">1 vídeo por semana</p>
+            <div class="day-tags">
+                <span class="day-tag">Domingo</span>
             </div>
+            <p style="margin-top:15px;font-size:.9em;color:var(--text-muted);">
+                Enquanto os vídeos são postados, novos serão produzidos.
+            </p>
         </div>
-    </section>
 
-<!-- ENTRADA -->
+        <div class="post-card">
+            <h3>⚡ Shorts</h3>
+            <div class="qty">10</div>
+            <p class="freq">3 shorts por semana</p>
+            <div class="day-tags">
+                <span class="day-tag">Segunda</span>
+                <span class="day-tag">Quarta</span>
+                <span class="day-tag">Sexta</span>
+            </div>
+            <p style="margin-top:15px;font-size:.9em;color:var(--text-muted);">
+                Enquanto os shorts são postados, novos serão produzidos.
+            </p>
+        </div>
+    </div>
+
+<div class="obs-box" style="margin-bottom: 30px; background: linear-gradient(90deg, rgba(91,124,255,.05) 0%, transparent 100%);">
+        <p style="margin-bottom: 15px;"><strong>Observação:</strong></p>
+        <ul style="padding-left: 20px; color: var(--text-muted);">
+            <li style="margin-bottom: 10px;"><strong>Todas as obras as obras</strong> serão dubladas integralmente, do primeiro ao último episódio ou capítulo.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="conteudo">
+    <h2>Conteúdo</h2>
+    <p>O que será fandublado no projeto:</p>
+
+    <div class="obs-box" style="margin-bottom: 30px; background: linear-gradient(90deg, rgba(91,124,255,.05) 0%, transparent 100%);">
+        <p style="margin-bottom: 15px;"><strong>Observação:</strong></p>
+        <ul style="padding-left: 20px; color: var(--text-muted);">
+            <li style="margin-bottom: 10px;">A obra <strong>não pode ter uma adaptação em animação</strong> que foi dublada oficialmente em português.</li>
+            <li>A obra <strong>não pode ter conteúdo 18+</strong> (gore, sexual, ecchi, fanservice ou outra coisa).</li>
+        </ul>
+    </div>
+
+    <div class="content-grid">
+        <div class="content-card">
+            <span class="content-icon">🎬</span>
+            <div class="content-title">Animações</div>
+            <span class="content-status status-ok">INCLUÍDO</span>
+        </div>
+
+        <div class="content-card">
+            <span class="content-icon">💬</span>
+            <div class="content-title">Comics</div>
+            <span class="content-status status-ok">INCLUÍDO</span>
+        </div>
+
+        <div class="content-card">
+            <span class="content-icon">🍱</span>
+            <div class="content-title">Mangás</div>
+            <span class="content-status status-ok">INCLUÍDO</span>
+        </div>
+
+        <div class="content-card">
+            <span class="content-icon">📖</span>
+            <div class="content-title">Manhwas</div>
+            <span class="content-status status-ok">INCLUÍDO</span>
+        </div>
+
+        <div class="content-card">
+            <span class="content-icon">🎮</span>
+            <div class="content-title">Jogos</div>
+            <span class="content-status status-ok">INCLUÍDO</span>
+        </div>
+
+        <div class="content-card">
+            <span class="content-icon">🔞</span>
+            <div class="content-title">Conteúdo 18+</div>
+            <span class="content-status status-nok">NÃO INCLUÍDO</span>
+        </div>
+    </div>
+</section>
+
+<section id="recompensa">
+    <h2>Recompensa</h2>
+    <p>Os participantes receberão:</p>
+    <div class="cards">
+        <div class="card">
+            <h3>🌟 Divulgação</h3>
+            <p>Como o projeto não possui fins lucrativos, a forma de reconhecimento será a divulgação na descrição do vídeo de algo do membro que participou do vídeo do canal, como links dos projetos pessoais ou redes sociais, junto com seu nome artístico.</p>
+        </div>
+    </div>
+</section>
+
 <section id="entrada">
     <h2>Entrada ao Projeto</h2>
     <p style="font-size:1.1em;text-align:center;color:var(--text-light);margin-bottom:30px;font-style:italic;">
         "O conhecimento é a única riqueza que aumenta quando é compartilhada."
+    </p>
+
+    <p style="text-align:center;margin-bottom:40px;font-size:1.05em;color:var(--text-light);">
+        Escolha o que mais combina com você, abra seu ticket em <strong style="color:var(--primary-blue);">#consultoria</strong> e diga qual o cargo de seu interesse!
     </p>
 
     <div class="accordion">
@@ -1321,20 +1208,15 @@
             </div>
         </details>
     </div>
-
-    <p style="text-align:center;margin-top:40px;font-size:1.05em;color:var(--text-light);">
-        Escolha o que mais combina com você, abra seu ticket em <strong style="color:var(--primary-blue);">#consultoria</strong> e diga qual o cargo de seu interesse!
-    </p>
 </section>
 
-<!-- FORMULÁRIO -->
 <section id="formulario">
-    <h2>Como Preencher o Formulário</h2>
+    <h2>Preenchendo o Formulário</h2>
 
     <div class="instrucao-block">
         <h3>1 - Nome Artístico</h3>
-        <p>Ao participar de um trabalho do projeto, o membro poderá escolher um nome artístico para representá-lo nas descrições deles, ou não, veja os exemplos:</p>
-        
+        <p>Ao participar de um trabalho do projeto, o membro poderá escolher um nome artístico para representá-lo nas descrições deles, ou não, deve responder como nestes exemplos:</p>
+
         <div class="exemplo-imagens">
             <figure>
                 <img src="Sabe.png" alt="Ex: Quer usar nome artístico">
@@ -1372,7 +1254,7 @@
     <div class="instrucao-block">
         <h3>3 - Finalização</h3>
         <p>Após responder ao formulário e realizar o teste do cargo que ele escolheu, o membro deverá se dirigir ao chat <strong>#consultoria</strong> e clicar no botão <strong>"Create Ticket"</strong> do bot Ticket Tool.</p>
-        
+
         <div class="exemplo-imagens" style="grid-template-columns:1fr;max-width:400px;margin:20px auto;">
             <figure>
                 <img src="Exemplo.png" alt="Exemplo de mensagem no ticket">
@@ -1396,84 +1278,61 @@
     </div>
 </section>
 
-    <!-- SONS DE CLIQUE (Web Audio API) -->
-    <script>
-        // Criar contexto de áudio
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        
-        // Função para criar som de clique
-        function playClickSound() {
-            if (audioContext.state === 'suspended') {
-                audioContext.resume();
-            }
-            
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            // Som tipo "pop" de estúdio
-            oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
-            oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1);
-            
-            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
-            
-            oscillator.start(audioContext.currentTime);
-            oscillator.stop(audioContext.currentTime + 0.1);
-        }
-        
-        // Função para som de hover (mais sutil)
-        function playHoverSound() {
-            if (audioContext.state === 'suspended') {
-                audioContext.resume();
-            }
-            
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            // Som tipo "whoosh" sutil
-            oscillator.frequency.setValueAtTime(400, audioContext.currentTime);
-            oscillator.frequency.exponentialRampToValueAtTime(600, audioContext.currentTime + 0.05);
-            
-            gainNode.gain.setValueAtTime(0.03, audioContext.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.05);
-            
-            oscillator.start(audioContext.currentTime);
-            oscillator.stop(audioContext.currentTime + 0.05);
-        }
-        
-        // Adicionar sons aos elementos interativos
-        document.querySelectorAll('a, button, .summary-item, .accordion-title, .content-card, .post-card, .card').forEach(el => {
-            el.addEventListener('click', playClickSound);
-            el.addEventListener('mouseenter', playHoverSound);
+<script>
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+    function playClickSound() {
+        if (audioContext.state === 'suspended') audioContext.resume();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1);
+        gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.1);
+    }
+
+    function playHoverSound() {
+        if (audioContext.state === 'suspended') audioContext.resume();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        oscillator.frequency.setValueAtTime(400, audioContext.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(600, audioContext.currentTime + 0.05);
+        gainNode.gain.setValueAtTime(0.03, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.05);
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.05);
+    }
+
+    document.querySelectorAll('a, button, .summary-item, .accordion-title, .content-card, .post-card, .card').forEach(el => {
+        el.addEventListener('click', playClickSound);
+        el.addEventListener('mouseenter', playHoverSound);
+    });
+
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollY >= sectionTop - 200) current = section.getAttribute('id');
         });
-        
-        // Menu active
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - 200) current = section.getAttribute('id');
-            });
-            navLinks.forEach(link => {
-                link.style.color = '';
-                link.style.fontWeight = '';
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.style.color = 'var(--primary-blue)';
-                    link.style.fontWeight = '600';
-                }
-            });
+        navLinks.forEach(link => {
+            link.style.color = '';
+            link.style.fontWeight = '';
+            if (link.getAttribute('href').slice(1) === current) {
+                link.style.color = 'var(--primary-blue)';
+                link.style.fontWeight = '600';
+            }
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
-
-
